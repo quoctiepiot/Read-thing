@@ -79,6 +79,14 @@ Nguồn gốc "xấu" không tự động vô hiệu hóa desire — nó hạ tr
 - Muốn mua xe/nhà → thuê thử, hoặc sống theo ngân sách sau khi mua trong 1 tháng
 - Proxy → thử đáp ứng nhu cầu sâu hơn bằng cách rẻ hơn, xem desire gốc còn không
 
+Mỗi phép thử phải ghi đủ 4 thứ, nếu không thì không chấm được kết quả:
+- **Giả thuyết:** "Nếu desire này thật thì …"
+- **Cách thử:** làm gì, ở đâu, tốn bao nhiêu
+- **Thời hạn:** ngày kết thúc
+- **Tiêu chí thành công:** kết quả hoặc cảm giác nào thì coi là thật (ví dụ: "hết 2 tuần vẫn muốn làm tiếp, không phải cố"), và kết quả nào thì coi là ảo
+
+Sau phép thử, kết thúc bằng đúng một dòng: *"Gõ **lưu** để ghi phép thử này vào Read-thing · Insights — weekly-review sẽ hỏi kết quả khi tới hạn."* (skill insight-capture). Khi phép thử cho kết quả thật và cần chọn cách làm → chuyển sang decision-check.
+
 ---
 
 ## Pattern đặc biệt: "nên muốn" và "muốn"
@@ -105,7 +113,7 @@ Desire thật thường có texture cảm xúc, không chỉ có lý lẽ. Nếu
 
 **Phần thật:** ...   **Phần ảo:** ...   (bỏ dòng này nếu Genuine/Perceived rõ ràng)
 **Thứ bạn có thể đang thật sự tìm:** <chỉ khi có dấu hiệu proxy>
-**Bước tiếp:** <phép thử rẻ ở bước 6, hoặc "đủ rõ để hành động" kèm hành động đầu tiên>
+**Bước tiếp:** <phép thử rẻ ở bước 6 (giả thuyết · cách thử · thời hạn · tiêu chí), hoặc "đủ rõ để hành động" kèm hành động đầu tiên — nếu còn phải chọn cách làm thì gợi ý decision-check>
 ```
 
 Ghi rõ bộ lọc nào là giả định (do tự suy từ tin nhắn, chưa được xác nhận).

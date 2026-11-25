@@ -1,7 +1,7 @@
 ---
 name: insight-capture
 description: >
-  Lưu những ý đáng giữ và hành động rút ra từ bài viết, video, sách, thread vào database Notion "Read-thing · Insights", tìm lại những gì đã lưu, và cập nhật trạng thái áp dụng. Dùng khi người dùng nói "lưu bài này", "lưu lại", "lưu ý này", "ghi vào Notion", "save insight", "lưu vào kho", nhất là ngay sau một lần content-value-check; khi hỏi "mình đã lưu/đọc gì về X?", "tìm lại ý về X"; hoặc khi báo "đã áp dụng …", "bỏ ý …", "đang thử …". KHÔNG dùng để lưu ghi chú họp, tài liệu công việc hay task list thông thường.
+  Lưu những ý đáng giữ và hành động rút ra từ bài viết, video, sách, thread — cùng các phép thử (từ desire-check) và quyết định (từ decision-check) — vào database Notion "Read-thing · Insights", tìm lại những gì đã lưu, và cập nhật trạng thái áp dụng. Dùng khi người dùng nói "lưu bài này", "lưu lại", "lưu ý này", "lưu phép thử", "lưu quyết định", "ghi vào Notion", "save insight", "lưu vào kho", nhất là ngay sau một lần content-value-check, desire-check hoặc decision-check; khi hỏi "mình đã lưu/đọc gì về X?", "tìm lại ý về X"; hoặc khi báo "đã áp dụng …", "bỏ ý …", "đang thử …". KHÔNG dùng để lưu ghi chú họp, tài liệu công việc hay task list thông thường.
 ---
 
 # Insight Capture
@@ -22,7 +22,7 @@ Ba chế độ:
 | Thuộc tính | Kiểu | Ghi chú |
 |---|---|---|
 | **Ý** | Title | Một câu, tự đứng được khi đọc lại sau 6 tháng không cần bài gốc |
-| **Loại** | Select | Insight · Fact · Framework · Hành động |
+| **Loại** | Select | Insight · Fact · Framework · Hành động · Phép thử · Quyết định |
 | **Độ mới** | Select | Mới · Quen |
 | **Chủ đề** | Multi-select | 1–3 tag; dùng lại tag đã có trước khi tạo tag mới |
 | **Nguồn** | Text | Tên bài — tác giả/kênh |
@@ -32,13 +32,27 @@ Ba chế độ:
 | **Xem lại** | Date | Chỉ cho Hành động (xem bảng dưới) |
 | **Số lần gặp** | Number | Mặc định 1; tăng khi nguồn khác nói cùng ý |
 | **Nguồn khác** | Text | Các nguồn sau nói cùng ý |
-| **Ghi chú** | Text | Bối cảnh áp dụng, phản biện, verdict bài nếu cần |
+| **Số lần dời** | Number | Mặc định 0; tăng mỗi lần dời ngày Xem lại |
+| **Ghi chú** | Text | Bối cảnh áp dụng, phản biện, verdict bài; với Phép thử/Quyết định: xem mục dưới |
 
 Hạn **Xem lại** cho Hành động:
 - [Làm ngay] → +7 ngày
 - [Tìm hiểu thêm] → +14 ngày
 - [Áp dụng khi] → để trống (áp dụng theo tình huống)
 - [Tránh / Dừng] → +30 ngày (kiểm xem đã bỏ được chưa)
+- Phép thử → ngày kết thúc phép thử
+- Quyết định → ngày xem lại mà decision-check đã đặt (mặc định +90 ngày)
+
+### Phép thử và Quyết định
+
+Hai loại này đến từ skill khác, không phải từ bài đọc. Nguồn ghi "desire-check" / "decision-check" kèm ngày.
+
+| Loại | Ý (title) | Ghi chú phải có |
+|---|---|---|
+| **Phép thử** | "Thử: <cách thử> — để kiểm <mong muốn>" | Giả thuyết · Tiêu chí thành công (kết quả nào nghĩa là desire thật) · Thời hạn |
+| **Quyết định** | "Quyết: chọn <X> thay vì <Y>" | Kỳ vọng (sẽ thấy gì nếu đúng) · Điều kiện đổi ý · Mức tự tin lúc quyết |
+
+Trạng thái ban đầu: Phép thử → **Đang thử**; Quyết định → **Mới lưu**. Không kiểm trùng với ý đọc; chỉ kiểm trùng với Phép thử/Quyết định đang mở cùng chủ đề.
 
 ### Tìm hoặc tạo database
 
@@ -56,6 +70,7 @@ Hạn **Xem lại** cho Hành động:
 - **Vừa chạy content-value-check trong chat** → lấy trực tiếp: bullet Tinh chất (kèm nhãn [Mới]/[Quen]) và các dòng Hành động.
 - **Chưa check** → không chạy lại cả bản đầy đủ. Chỉ chắt nhanh: các ý [Mới] và hành động cụ thể. Không có nội dung bài trong chat → xin nội dung hoặc link.
 - **Người dùng chỉ định** ("lưu ý số 2 và 4", "chỉ lưu hành động") → làm đúng như vậy.
+- **Vừa chạy desire-check / decision-check** → lưu một dòng Phép thử hoặc Quyết định theo mục trên. Thiếu tiêu chí thành công / kỳ vọng → hỏi đúng một câu trước khi ghi, vì thiếu nó thì weekly-review không chấm được.
 
 ### Bước 2 — Lọc
 
@@ -104,7 +119,7 @@ Không bao giờ báo "đã lưu" nếu lệnh ghi lỗi — nói rõ dòng nào
 "Đã áp dụng ý X", "bỏ ý Y", "đang thử Z", "dời lịch xem lại".
 
 1. Tìm dòng khớp. Nhiều dòng khớp → liệt kê ngắn, hỏi dòng nào.
-2. Cập nhật **Trạng thái** (và **Xem lại** nếu có). Người dùng kể kết quả ("áp dụng rồi, hiệu quả", "thử rồi, không hợp") → ghi một dòng vào Ghi chú kèm ngày.
+2. Cập nhật **Trạng thái** (và **Xem lại** nếu có; dời ngày thì tăng **Số lần dời**). Người dùng kể kết quả ("áp dụng rồi, hiệu quả", "thử rồi, không hợp") → ghi một dòng vào Ghi chú kèm ngày.
 3. Xác nhận một dòng: `✓ <ý> → Đã áp dụng`.
 
 ---
