@@ -1,7 +1,7 @@
 ---
 name: synthesize
 description: >
-  Gom các ý đã lưu trong kho Notion "Read-thing · Insights" về một chủ đề thành bộ nguyên tắc của riêng người dùng: nhóm ý gần nhau, xếp theo độ chắc (đã tự kiểm chứng, nhiều nguồn, một nguồn), đặt các ý mâu thuẫn cạnh nhau kèm điều kiện áp dụng, chỉ ra khoảng trống, rồi ghi thành trang Notion "Nguyên tắc · <chủ đề>". Dùng khi người dùng gõ "tổng hợp <chủ đề>", "nguyên tắc của mình về X", "mình đã học được gì về X", "gom các ý về X", "synthesize", hoặc khi weekly-review gợi ý một chủ đề đã đủ dữ liệu. Nếu chỉ muốn xem lại danh sách ý đã lưu → dùng chế độ Tìm lại của insight-capture.
+  Gom các ý đã lưu trong kho Notion "Read-thing · Insights" về một chủ đề thành bộ nguyên tắc của riêng người dùng: nhóm ý gần nhau, xếp theo độ chắc (đã tự kiểm chứng, nhiều nguồn, một nguồn), đặt các ý mâu thuẫn cạnh nhau kèm điều kiện áp dụng, chỉ ra khoảng trống, rồi ghi thành trang Notion "Nguyên tắc · [chủ đề]". Dùng khi người dùng gõ "tổng hợp [chủ đề]", "nguyên tắc của mình về X", "mình đã học được gì về X", "gom các ý về X", "synthesize", hoặc khi weekly-review gợi ý một chủ đề đã đủ dữ liệu. Nếu chỉ muốn xem lại danh sách ý đã lưu → dùng chế độ Tìm lại của insight-capture.
 ---
 
 # Synthesize
