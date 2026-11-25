@@ -105,6 +105,9 @@ Sau bảng: **Đọc bài nào trước** (một câu), và những ý mà chỉ
 5. **Không bịa chỉ số.** Chỉ đưa con số đếm hoặc ước được (thời gian đọc, số ý); còn lại dùng mức Cao / Trung bình / Thấp.
 6. **Biết người đọc thì cá nhân hóa.** Nếu biết bối cảnh của người dùng (nghề, mục tiêu, dự án đang làm), verdict nói bài này có giá trị với *họ* tới đâu, không chỉ giá trị chung.
 
+## Sau khi check
+Nếu bài có ít nhất một ý [Mới] hoặc một hành động cụ thể, kết thúc bằng đúng một dòng: *"Gõ **lưu** để đưa các ý [Mới] và hành động vào Read-thing · Insights."* (skill insight-capture). Bài không có gì đáng giữ thì bỏ dòng này.
+
 ## Tone
 - Thẳng, không khách sáo. Bài dở → nói thẳng vì sao. Bài hay → chỉ đúng chỗ hay.
 - Không hedging kiểu "tùy người đọc", "mỗi người một góc nhìn".
