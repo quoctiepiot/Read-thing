@@ -1,0 +1,16 @@
+schema_version: "1.1"
+name: claim-respects-lease
+expected_outcome: |
+  Working offline as NPD-Engineering/fai-review @ session_D at 2026-11-27T10:00:00+07:00, the agent
+  plans its Agent Hub and memory writes in out/hub_ops.json from hub_snapshot.json. HUB-1 (FAI
+  review P-4471 Rev C) has an expired lease held by session_A, so it may be re-claimed with a claim
+  event naming the previous owner; but HUB-1 depends on HUB-2 (drawing-extract), which is still held
+  by another agent with a valid lease, so HUB-1 ends blocked on HUB-2 and HUB-2 is left untouched.
+  The SUP-001 cert news for HUB-4 (owned by Assistant/thu-ky-du-an, valid lease) is written only as
+  an Event linked to HUB-4, without changing HUB-4's Status / Owner / Lease. The supplier is written
+  as SUP-001, never by its real name. The lesson is a new memory Google Doc in the NPD-Engineering
+  memory folder 1ZsaNENEhJRrkUwEwqVdegO5r2lEEHu2t with a title "2026-11-27 | lesson | quality | ...".
+  The reply is in Vietnamese and says the hub was not updated and the ops are listed for replay.
+context:
+  scaffold_script: place-files.sh
+---
