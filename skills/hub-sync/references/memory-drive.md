@@ -11,8 +11,8 @@ Repo chỉ chứa skill, instruction, hướng dẫn. **Không** ghi memory vào
 | Repo | Skill thuộc repo | Thư mục `memory/` (ID) | Thư mục dữ liệu gốc của repo (ID) |
 |---|---|---|---|
 | NPD-Engineering | scan-doc-sorter, drawing-extract, fai-review, mọi skill mảng Engineering | `1ZsaNENEhJRrkUwEwqVdegO5r2lEEHu2t` | `1MYhY_QvlNspiYDhLqbvkcRpT_ElHuQxI` (`01_WORK - TTI data/repo NPD-Engineering-History-Data/`; có thêm `registry/`, `cases/`, `files/`) |
-| Assistant | thu-ky-du-an | `1URUoawg3uNJsiOCN5e7bpyIMvEx5eRbD` | `1oc9Af97dp0o5AJ8PCT5-DM1j8hnbmcdY` (`AI-Agent-Data/repo Assistant-Data/`) |
-| Read-thing | desire-check, decision-check, content-value-check, insight-capture, weekly-review, synthesize | `1wqCOSXs2ynSI8y7F6NLREKXr5nD5MEqO` | `1BWd3zvxBr_hNTxLdEOippirdHivHzdAP` (`AI-Agent-Data/repo Read-thing-Data/`) |
+| Assistant | thu-ky-du-an | `1URUoawg3uNJsiOCN5e7bpyIMvEx5eRbD` | `15-a4w9pBGE_oHfw4GLRBixGKTvWk6cnE` (`AI AGENT DATA/repo_assistant data/`) |
+| Read-thing | desire-check, decision-check, content-value-check, insight-capture, weekly-review, synthesize | `1wqCOSXs2ynSI8y7F6NLREKXr5nD5MEqO` | `1VzVrfLEebfmdBsAcjdKW47zqW_V8nPR3` (`AI AGENT DATA/repo_read thing data/`) |
 
 `hub-sync` tự nó không thuộc repo nào: ghi vào thư mục của repo đang chạy task.
 Thư mục không mở được → `search_files` `title = 'memory' and mimeType = 'application/vnd.google-apps.folder'`,

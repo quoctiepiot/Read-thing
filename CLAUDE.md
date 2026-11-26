@@ -8,7 +8,7 @@ Luồng skill và cách cài: `README.md`.
 | Kho | Ở đâu |
 |---|---|
 | Insight, phép thử, quyết định, trang Nguyên tắc | Notion `Read-thing · Insights` (skill `insight-capture`, `weekly-review`, `synthesize`) |
-| **Memory** của agent — riêng repo này | Google Drive `AI-Agent-Data/repo Read-thing-Data/memory/` |
+| **Memory** của agent — riêng repo này | Google Drive `AI AGENT DATA/repo_read thing data/memory/` |
 | **State / tiến độ** của mọi agent (3 repo) | Notion **Agent Hub** (Tasks, Events, Agents) |
 
 Insight của tôi ≠ memory của agent: ý rút ra từ bài đọc → `insight-capture`; bài học về cách skill chạy,

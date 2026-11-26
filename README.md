@@ -25,7 +25,7 @@ content-value-check ──────────────┘          (Noti
 | Kho | Ở đâu |
 |---|---|
 | Insight, phép thử, quyết định, trang Nguyên tắc (sản phẩm của các skill) | Notion `Read-thing · Insights` |
-| **Memory** của agent (bài học về cách chạy skill, quy ước người dùng muốn) | Google Drive `AI-Agent-Data/repo Read-thing-Data/memory/` |
+| **Memory** của agent (bài học về cách chạy skill, quy ước người dùng muốn) | Google Drive `AI AGENT DATA/repo_read thing data/memory/` |
 | **State / tiến độ** dùng chung với agent repo khác | Notion **Agent Hub**, skill [`hub-sync`](skills/hub-sync/SKILL.md) |
 
 Repo chỉ chứa skill, instruction, hướng dẫn. `hub-sync` là bản copy giống hệt ở repo NPD-Engineering, Assistant.
