@@ -1,0 +1,65 @@
+{
+  "snapshot_time": "2026-11-27T10:00:00+07:00",
+  "tasks": [
+    {
+      "task_id": "HUB-1",
+      "url": "https://app.notion.com/p/hub1",
+      "Task": "FAI review P-4471 Rev C (SUP-001)",
+      "Status": "in_progress",
+      "Repo": "NPD-Engineering",
+      "Domain": "quality",
+      "Skill": "scan-doc-sorter > drawing-extract > fai-review",
+      "Owner": "NPD-Engineering/fai-review @ session_A",
+      "Lease until": "2026-11-27T09:00:00+07:00",
+      "Tags": "P-4471, SUP-001",
+      "Depends on": ["HUB-2", "HUB-3"],
+      "Progress": "Đã đọc Form 1, chờ list đặc tính từ drawing-extract",
+      "Next step": "Đối chiếu Form 3 với list đặc tính"
+    },
+    {
+      "task_id": "HUB-2",
+      "url": "https://app.notion.com/p/hub2",
+      "Task": "drawing-extract P-4471 Rev C",
+      "Status": "claimed",
+      "Repo": "NPD-Engineering",
+      "Domain": "general",
+      "Skill": "drawing-extract",
+      "Owner": "NPD-Engineering/drawing-extract @ session_B",
+      "Lease until": "2026-11-27T11:30:00+07:00",
+      "Tags": "P-4471",
+      "Blocks": ["HUB-1"],
+      "Progress": "Đang render trang 2/3"
+    },
+    {
+      "task_id": "HUB-3",
+      "url": "https://app.notion.com/p/hub3",
+      "Task": "Tách package scan FAI P-4471-1 (SUP-001)",
+      "Status": "done",
+      "Repo": "NPD-Engineering",
+      "Domain": "general",
+      "Skill": "scan-doc-sorter",
+      "Owner": "",
+      "Tags": "P-4471, SUP-001",
+      "Blocks": ["HUB-1"],
+      "Output link": "https://drive.google.com/drive/folders/example-split"
+    },
+    {
+      "task_id": "HUB-4",
+      "url": "https://app.notion.com/p/hub4",
+      "Task": "Follow-up cert shot peen P-4471 với SUP-001",
+      "Status": "in_progress",
+      "Repo": "Assistant",
+      "Domain": "project",
+      "Skill": "thu-ky-du-an",
+      "Owner": "Assistant/thu-ky-du-an @ session_C",
+      "Lease until": "2026-11-27T12:00:00+07:00",
+      "Tags": "P-4471, SUP-001",
+      "Progress": "Đã soạn nháp mail nhắc lần 2"
+    }
+  ],
+  "data_sources": {
+    "Tasks": "collection://42405074-f7ed-81f4-8501-000b4d5ef55b",
+    "Events": "collection://42405074-f7ed-81a1-8ccb-000bb99c5274",
+    "Agents": "collection://42405074-f7ed-8167-8c5e-000bcd2ea0cb"
+  }
+}
