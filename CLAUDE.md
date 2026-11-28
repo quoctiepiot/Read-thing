@@ -23,5 +23,8 @@ Protocol state + memory: skill `hub-sync` (`skills/hub-sync/SKILL.md`). Tóm t�
 ## Cách làm việc
 
 - Trả lời tiếng Việt, ngắn, kết luận trước.
+- Tải kết quả task lên Drive (nếu có): **hỏi trước**, để trong thư mục liên quan của task (cạnh phiên bản cũ), mỗi lần
+  cập nhật một folder `<Loại>_<mã>_<MM.DD.YYYY>[_vN]/`, file cùng tên + ngày; tải xong gửi link thư mục.
+  Chi tiết: `skills/hub-sync/references/drive-output.md`.
 - `skills/hub-sync/` là bản copy giống hệt ở repo NPD-Engineering và Assistant: sửa thì sửa cả 3.
 - **Luôn hỏi trước** khi commit hoặc push; liệt kê file thay đổi và commit message đề xuất.

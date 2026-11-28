@@ -15,6 +15,8 @@ Repo chỉ chứa skill, instruction, hướng dẫn. **Không** ghi memory vào
 | Read-thing | desire-check, decision-check, content-value-check, insight-capture, weekly-review, synthesize | `1wqCOSXs2ynSI8y7F6NLREKXr5nD5MEqO` | `1VzVrfLEebfmdBsAcjdKW47zqW_V8nPR3` (`AI AGENT DATA/repo_read thing data/`) |
 
 `hub-sync` tự nó không thuộc repo nào: ghi vào thư mục của repo đang chạy task.
+Kết quả task (report, kết quả tính toán…) **không** lưu vào các thư mục trên mà vào thư mục dự án của task:
+xem `drive-output.md`.
 Thư mục không mở được → `search_files` `title = 'memory' and mimeType = 'application/vnd.google-apps.folder'`,
 báo người dùng ID mới để sửa file này ở cả 3 repo.
 

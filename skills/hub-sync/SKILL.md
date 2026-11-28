@@ -1,6 +1,6 @@
 ---
 name: hub-sync
-description: "General skill: đồng bộ state / tiến độ với Notion Agent Hub (Tasks, Events, Agents) và đọc / ghi memory của repo trên Google Drive, để nhiều agent ở các repo NPD-Engineering, Assistant, Read-thing làm việc song song và cập nhật tiến độ cho nhau. Dùng ở ĐẦU và CUỐI mọi task nhiều bước, task kéo qua nhiều session, chuỗi skill, hoặc khi người dùng hỏi: \"agent khác đang làm gì\", \"tiến độ các agent\", \"task X tới đâu\", \"nhận việc\", \"giao cho agent khác\", \"cập nhật hub\", \"ghi memory\", \"nhớ lại bài học về X\", \"what are the other agents doing\", \"claim / hand off this task\", \"update the hub\", \"save this lesson\". Không dùng cho câu hỏi một lượt không cần theo dõi, không dùng để lưu insight đọc sách (đó là insight-capture), không dùng để lưu file gốc / kết quả (để trên Drive, hub chỉ giữ link)."
+description: "General skill: đồng bộ state / tiến độ với Notion Agent Hub (Tasks, Events, Agents) và đọc / ghi memory của repo trên Google Drive, để nhiều agent ở các repo NPD-Engineering, Assistant, Read-thing làm việc song song và cập nhật tiến độ cho nhau. Dùng ở ĐẦU và CUỐI mọi task nhiều bước, task kéo qua nhiều session, chuỗi skill, hoặc khi người dùng hỏi: \"agent khác đang làm gì\", \"tiến độ các agent\", \"task X tới đâu\", \"nhận việc\", \"giao cho agent khác\", \"cập nhật hub\", \"ghi memory\", \"nhớ lại bài học về X\", \"what are the other agents doing\", \"claim / hand off this task\", \"update the hub\", \"save this lesson\". Cũng dùng khi tải kết quả task lên Drive: \"lưu / tải kết quả lên Drive\", \"upload report lên Drive\", \"save the result to Drive\" (quy ước tên folder / file + ngày: references/drive-output.md). Không dùng cho câu hỏi một lượt không cần theo dõi, không dùng để lưu insight đọc sách (đó là insight-capture); hub không chứa file, chỉ giữ link Drive."
 ---
 
 # Hub sync
@@ -13,7 +13,8 @@ Hai kho, hai việc khác nhau:
 | **Memory** (riêng từng repo) | Bài học, quyết định, sự thật, quy ước rút ra sau task | Google Drive, thư mục `memory/` của repo đó |
 
 ID, cột, định dạng giá trị: `references/hub-schema.md`. Thư mục memory và mẫu mục: `references/memory-drive.md`.
-Đọc cả hai trước lần gọi đầu tiên.
+Đọc cả hai trước lần gọi đầu tiên. Tải kết quả task lên Drive (vị trí, tên folder / file + ngày, `_vN`):
+`references/drive-output.md`.
 
 ## Quy tắc cứng
 
@@ -26,7 +27,8 @@ ID, cột, định dạng giá trị: `references/hub-schema.md`. Thư mục mem
 4. **Memory chỉ ghi vào thư mục của repo mình.** Đọc memory repo khác được khi liên quan.
 5. **Hub không chặn việc chính.** Notion / Drive lỗi → vẫn làm task, cuối kết quả ghi mục
    "Hub chưa cập nhật" liệt kê các thao tác định ghi để chạy lại sau.
-6. Ghi hub và ghi memory **không cần hỏi trước**. Tải file gốc lên Drive vẫn phải hỏi.
+6. Ghi hub và ghi memory **không cần hỏi trước**. Tải file gốc / kết quả lên Drive vẫn phải hỏi; khi hỏi, đề xuất
+   luôn vị trí + tên folder / file theo `references/drive-output.md`, tải xong gửi người dùng link thư mục.
 
 Tên agent: `<repo>/<skill>` (vd. `NPD-Engineering/fai-review`). Chuỗi skill: dùng skill tiêu thụ cuối.
 Định danh phiên: `<agent> @ <session id>`; không có session id thì `@ <surface> <YYYY-MM-DD HH:MM>`.
@@ -64,7 +66,8 @@ Sau khi ghi claim: **đọc lại Task**. Owner không phải mình (agent khác
 
 1. Kết quả cần người dùng quyết (accept / reject, ký, gửi) → `Status = review`. Xong hẳn → `done`.
    Dừng giữa chừng → Event `release`, `Status = todo`, xoá Owner / Lease, ghi `Next step`.
-2. `Output link` = link Drive tới kết quả (nếu đã lưu). Event `done` / `review` tóm tắt 1–2 dòng.
+2. `Output link` = link Drive tới **thư mục phiên bản** của kết quả (nếu đã lưu, `references/drive-output.md`).
+   Event `done` / `review` tóm tắt 1–2 dòng, nêu tên file chính.
 3. Có bài học / quyết định / sự thật đáng nhớ → tạo mục memory (mẫu: `references/memory-drive.md`).
    Không có gì đáng nhớ thì không ghi.
 4. Cuối kết quả gửi người dùng, thêm một dòng: `Hub: HUB-<id> → <status>` và `Memory: <số mục đã ghi>`.
