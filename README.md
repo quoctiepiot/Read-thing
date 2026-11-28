@@ -18,17 +18,17 @@ content-value-check ──────────────┘          (Noti
 | [`insight-capture`](skills/insight-capture/SKILL.md) | Lưu ý mới, hành động, phép thử, quyết định vào Notion; gộp trùng; tìm lại; cập nhật trạng thái. | "lưu", "mình đã lưu gì về X?" |
 | [`weekly-review`](skills/weekly-review/SKILL.md) | Hỏi kết quả các dòng tới hạn, cập nhật, báo số liệu tuần, chốt 1–3 ưu tiên. Có thể đặt lịch. | "review tuần" |
 | [`synthesize`](skills/synthesize/SKILL.md) | Gom ý về một chủ đề thành trang "Nguyên tắc · <chủ đề>", có nhãn độ chắc. | "tổng hợp X" |
-| [`hub-sync`](skills/hub-sync/SKILL.md) | General: ghi / đọc state trên Notion Agent Hub và memory của repo trên Drive, để agent các repo làm song song. | "agent khác đang làm gì?", "cập nhật hub" |
 
 ## Dữ liệu và agent hub
 
 | Kho | Ở đâu |
 |---|---|
 | Insight, phép thử, quyết định, trang Nguyên tắc (sản phẩm của các skill) | Notion `Read-thing · Insights` |
-| **Memory** của agent (bài học về cách chạy skill, quy ước người dùng muốn) | Google Drive `AI AGENT DATA/repo_read thing data/memory/` |
-| **State / tiến độ** dùng chung với agent repo khác | Notion **Agent Hub**, skill [`hub-sync`](skills/hub-sync/SKILL.md) |
+| **Memory** của agent (bài học về cách chạy skill, quy ước người dùng muốn) | Notion **Agent Hub → Memory**, cột `Repo = Read-thing` |
+| **State / tiến độ** dùng chung với agent repo khác | Notion **Agent Hub**, skill `hub-sync` |
 
-Repo chỉ chứa skill, instruction, hướng dẫn. `hub-sync` là bản copy giống hệt ở repo NPD-Engineering, Assistant.
+Repo chỉ chứa skill, instruction, hướng dẫn. Skill `hub-sync` và `dieu-phoi` (giao việc cho agent) có nguồn duy nhất ở
+repo private `agent-core`, cài ở claude.ai Settings → Skills; repo này không giữ bản copy.
 
 ## Cài lên claude.ai
 
