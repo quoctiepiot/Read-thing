@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Google_Drive__search_files",
+      "mcp__Google_Drive__list_recent_files",
+      "mcp__Google_Drive__get_file_metadata",
+      "mcp__Google_Drive__get_file_permissions",
+      "mcp__Google_Drive__list_file_revisions",
+      "mcp__Google_Drive__list_shared_drives",
+      "mcp__Google_Drive__get_shared_drive_metadata",
+      "mcp__Google_Drive__read_file_content",
+      "mcp__Google_Drive__download_file_content",
+      "mcp__Google_Drive__create_file",
+      "mcp__Google_Drive__copy_file",
+      "mcp__Google_Drive__update_file",
+      "mcp__Notion__notion-search",
+      "mcp__Notion__notion-fetch",
+      "mcp__Notion__notion-query-data-sources",
+      "mcp__Notion__notion-query-multiple-data-sources",
+      "mcp__Notion__notion-memory-search",
+      "mcp__Notion__notion-get-self",
+      "mcp__Notion__notion-get-users",
+      "mcp__Notion__notion-get-comments",
+      "mcp__Notion__notion-create-pages",
+      "mcp__Notion__notion-update-page",
+      "mcp__Notion__notion-create-comment",
+      "mcp__Notion__notion-create-file-upload",
+      "mcp__Notion__notion-create-attachment",
+      "mcp__Notion__notion-download-attachment",
+      "mcp__Notion__notion-get-file-download-urls"
+    ]
+  }
+}

@@ -19,7 +19,8 @@ repo này**: nguồn duy nhất là repo private `agent-core`, cài ở claude.a
 - Đầu task nhiều bước: tìm Task trùng trên hub, nhận việc bằng lease; đọc memory liên quan.
 - Update tiến độ của agent khác (repo khác): chỉ ghi **Event**, không ghi đè Status / Owner / Lease.
 - Cuối task: cập nhật hub; ghi memory nếu có điều đáng nhớ. Không ghi memory vào repo.
-- Ghi hub / memory không cần hỏi.
+- Ghi hub / memory và tải file lên Drive **tự động, không cần hỏi** (quyết định 2026-11-28); vẫn hỏi trước khi
+  xoá / trash, share file cho người khác hoặc ghi đè file có sẵn.
 
 ## Cách làm việc
 
